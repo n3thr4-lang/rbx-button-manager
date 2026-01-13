@@ -44,6 +44,7 @@ Notes:
 - Always :add_button() first, then :Activate_button()
 - If config.visible is nil → keeps current visibility
 - Auto-cleans connections on :Destroy()
+- Everytime you use :Activate_button it will clear all connection and create new connections with new given callbacks
 
 Made with ♡ by nethra • 2026
 ♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
@@ -177,7 +178,7 @@ Modes.Menu = function()
 	}, { button_type = "single_press" })
 end
 
-bm:add_button("Action", script.Parent.actionbutton)
+bm:add_button(script.Parent.actionbutton, "Action")
 
 -- swap modes
 Modes.Combat()
@@ -185,6 +186,7 @@ task.wait(2)
 Modes.Build()
 task.wait(2)
 Modes.Menu()
+
 
 
 
