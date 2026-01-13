@@ -45,12 +45,10 @@ Notes:
 - Auto-cleans connections on :Destroy()
 
 Made with ♡ by nethra • 2026
-
+♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
 ]]
 
 -- ====================== REAL USAGE EXAMPLES ======================
--- These are executable code — you can leave them here for reference
--- or remove/comment them out in production
 
 -- SINGLE PRESS (normal button click)
 bm:Activate_button("Play", {
@@ -145,4 +143,5 @@ bm:Activate_button("Play", {
     end
 }, {
     button_type = "single_press"   -- or any other type
+
 })
