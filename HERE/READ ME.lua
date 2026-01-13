@@ -17,6 +17,7 @@ Supported interaction types:
 - Automatic cleanup when button is destroyed
 - Safe disconnection of events & threads
 - Easy activation, disabling, removal, full termination
+- Easily swap button behavior during runtime
 
 ## Quick Setup
 local ButtonManager = require(game.ReplicatedStorage.ButtonManager)
@@ -48,7 +49,7 @@ Made with ♡ by nethra • 2026
 ♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
 ]]
 
--- ====================== REAL USAGE EXAMPLES ======================
+-- ====================== BASIC USAGE EXAMPLES ======================
 
 -- SINGLE PRESS (normal button click)
 bm:Activate_button("Play", {
@@ -145,3 +146,42 @@ bm:Activate_button("Play", {
     button_type = "single_press"   -- or any other type
 
 })
+
+-- ====================== ADVANCED USAGE EXAMPLE ======================
+local Modes = {}
+
+Modes.Combat = function()
+	bm:Activate_button("Action", {
+		fire = function()
+			print("⚔ Attack!")
+		end
+	}, { button_type = "single_press" })
+end
+
+Modes.Build = function()
+	bm:Activate_button("Action", {
+		hold = function()
+			print("🏗 Placing object...")
+		end,
+		release = function()
+			print("🏠 Object placed")
+		end
+	}, { button_type = "hold" })
+end
+
+Modes.Menu = function()
+	bm:Activate_button("Action", {
+		fire = function()
+			print("✅ Confirm")
+		end
+	}, { button_type = "single_press" })
+end
+
+-- swap modes
+Modes.Combat()
+task.wait(2)
+Modes.Build()
+task.wait(2)
+Modes.Menu()
+
+
