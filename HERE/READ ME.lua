@@ -177,11 +177,14 @@ Modes.Menu = function()
 	}, { button_type = "single_press" })
 end
 
+bm:add_button("Action", script.Parent.actionbutton)
+
 -- swap modes
 Modes.Combat()
 task.wait(2)
 Modes.Build()
 task.wait(2)
 Modes.Menu()
+
 
 
