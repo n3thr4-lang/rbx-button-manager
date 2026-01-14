@@ -55,7 +55,7 @@ KEY CHANGES
     - button key (string)
     - GuiButton instance
 - Improves API ergonomics and reduces boilerplate for consumers.
-- button-to-key mapping allows you to use API on button by using button to lookup
+
 
 4. Reset Handling
 --------------------------------
@@ -63,17 +63,13 @@ KEY CHANGES
 
 5. API Behavior Changes
 -----------------------
-- Activate_button(), toggle_visibility, remove_button, disable_button now:
-
-    - Validates button existence and type
-    -supports both button instance and key to lookup
 
 - remove_button() fully cleans:
     - state
     - cache
     - reverse mappings
 
-7. Legacy Code Removed
+6. Legacy Code Removed
 ----------------------
 - Removed older inline button_function and interaction_hooks implementations.
 - Reduced duplicated logic across versions.
