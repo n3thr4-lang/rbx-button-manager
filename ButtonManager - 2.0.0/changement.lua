@@ -47,29 +47,19 @@ KEY CHANGES
 - This separation allows adding new interaction types without modifying
   the core ButtonManager class.
 
-3. Cache and Cleanup Improvements
----------------------------------
-- All RBXScriptConnections and running threads are stored per button key.
-- disable_button() now safely disconnects:
-    - RBXScriptConnections
-    - task threads
-- Button destruction is automatically handled via Destroying connections.
 
-4. Button-to-Key Mapping
+3. Button-to-Key Mapping
 ------------------------
 - Introduced a reverse lookup table (button_to_key).
 - Functions now accept either:
     - button key (string)
     - GuiButton instance
 - Improves API ergonomics and reduces boilerplate for consumers.
+- button-to-key mapping allows you to use API on button by using button to lookup
 
-5. Visibility and Reset Handling
+5. Reset Handling
 --------------------------------
-- toggle_visibility() supports:
-    - single button
-    - all registered buttons
 - Optional state reset added via config.reset_state.
-- Visibility defaults are preserved unless explicitly overridden.
 
 6. API Behavior Changes
 -----------------------
@@ -85,7 +75,6 @@ KEY CHANGES
 7. Legacy Code Removed
 ----------------------
 - Removed older inline button_function and interaction_hooks implementations.
-- Eliminated unused or partially implemented concepts (e.g. cooldown, busy).
 - Reduced duplicated logic across versions.
 
 --------------------------------------------------------------------------------
