@@ -29,6 +29,7 @@ KEY CHANGES
     - last_release
 - State is no longer inferred implicitly from events.
 - Snapshot copies are provided to operators to prevent external mutation.
+- button state are now not local but will be stored in their state table, use get_state() will return a table containing button states
 
 2. Callback Architecture Refactor
 ---------------------------------
@@ -65,6 +66,7 @@ KEY CHANGES
 -----------------------
 
 - remove_button() fully cleans:
+
     - state
     - cache
     - reverse mappings
